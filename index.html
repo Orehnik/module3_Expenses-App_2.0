@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Расходы</title>
+  </head>
+  <body>
+    <section class="expenses container">
+      <h1 class="expenses__header">Учет расходов</h1>
+      <div class="expenses__top-container top-container">
+        <div class="expenses__input-container input-container features-left">
+          <input
+            data-find="input-add-expense"
+            class="expenses__input-add-expense expenses__input"
+            type="number"
+            placeholder="руб."
+          />
+          <div class="expenses__select-category-wrapper">
+            <select
+              data-find="input-add-category"
+              class="expenses__select-category expenses__input select-input"
+              name="category"
+              id="category"
+            >
+              <option hidden disabled selected value="Категория">
+                Категория
+              </option>
+              <option value="Питание">Питание</option>
+              <option value="Транспорт">Транспорт</option>
+              <option value="Аптека">Аптека</option>
+              <option value="Развлечения">Развлечения</option>
+            </select>
+          </div>
+        </div>
+        <button
+          data-find="button-add-expense"
+          class="expenses__button-add-expense blue-button"
+        >
+          Добавить
+        </button>
+        
+      </div>
+
+      <div class="expenses__features">
+        <div class="features-left">
+          <div class="expenses__limit">
+            <h2 class="expenses__limit-header feature-header">
+              Лимит:
+              <span
+                data-find="limit"
+                class="expenses__limit-value-container value-container"
+                >10000</span
+              >
+            </h2>
+            <button
+              data-find="button-open-change-limit"
+              class="expenses__limit-change"
+            ></button>
+          </div>
+          <div class="expenses__total">
+            <h2 class="expenses__total-header feature-header">
+              Всего:
+              <span
+                data-find="total"
+                class="expenses__total-value-container value-container"
+              ></span>
+            </h2>
+          </div>
+          <div class="expenses__status-container">
+            <h2 class="expenses__status-header feature-header">
+              Статус:
+              <span
+                data-find="status"
+                class="expenses__status value-container"
+              ></span>
+            </h2>
+          </div>
+          <button
+            data-find="button-reset-expenses"
+            class="expenses__button-reset features-left orange-button"
+          >
+            Сбросить расходы
+          </button>
+        </div>
+        <div class="expenses__features-right features-right">
+          <div class="expenses__history">
+            <h2 class="expenses__history-header feature-header">История:</h2>
+            <ol data-find="history" class="expenses__history-list"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div data-find="popup" class="popup">
+      <div data-find="popup__content" class="popup__content">
+        <div data-find="popup__close-btn" class="popup__close-btn"></div>
+        <h2 class="popup__header feature-header">Новый лимит</h2>
+        <div class="popup__top-container top-container">
+          <div class="popup__input-container input-container features-left">
+            <input
+              data-find="input-change-limit"
+              class="popup__input-change-limit features-left expenses__input"
+              type="number"
+              placeholder="руб."
+            />
+          </div>
+          <button
+            data-find="button-change-limit"
+            class="pupup__button-change-limit features-right blue-button"
+          >
+            Задать лимит
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+    <script src="./popup.js"></script>
+  </body>
+</html>
